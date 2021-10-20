@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_FINAL_EVGENI_KREIN</title>
+    
+    <script>
+        
+        //Question 1 - Dividing numbers into groups by size:
+        function numSize(){
+            var usrNum = Number(prompt("Enter a positive number to see how large it is:"));
+            if (usrNum >= 0 && usrNum <= 100){
+                alert("Small") // Or concole.log(), document.write() etc.
+            } else if (usrNum >= 101 && usrNum <= 1000){
+                alert("Medium")
+            } else if (usrNum > 1000){
+                alert("Large")
+            }    
+        }
+
+        //Question 2 - Adding 10 user-numbers to a string: 
+        function addNum() {
+            var usrSum = 0;
+            for (i = 1; i <= 10; i++){
+                var usrNum = Number(prompt("Enter number #" + i));  
+                usrSum += usrNum;
+            }
+            alert("The sum is: " + usrSum);
+        }
+
+        //Question 3 - Login Interface: 
+        function usrGrt(){
+            fName = prompt("Enter your first name:")
+            lName = prompt("Enter your last name:")
+            alert("Hello " + fName + " " + lName + "! Welcome back into the system." )
+
+        }
+
+        //Question 4 - Checking User Number: 
+        function num100(){
+            var usrNum = Number(prompt("Enter a number from 1-100: "));
+            var total = 0;
+            if (usrNum >= 1 && usrNum <= 100){   
+                for (i = 0; i <= usrNum; i++) {
+                    total += i;      
+                } 
+                alert("Your sum of all numbers up the one you have entered is: " + total); 
+            } else {
+                alert("Invalid Number!")
+            }
+
+        }
+
+        //Question 5 - Generating uneven numbers:
+        function unEven(){
+            const numList = [];
+            var usrNum = prompt("Enter a number to see all the unueven numbers preceding it");
+            for (i = 0; i < usrNum; i++) {
+                if (i % 2 !=0){
+                    numList.push(i)
+                }
+            }
+            alert(numList)
+        } 
+
+        //Question 6 - Appending 5 user-numbers to a string: 
+        function appNum() {
+            var usrStr = "";
+            for (i = 1; i <= 5; i++){
+                var usrNum = prompt("Enter number #" + i);  
+                usrStr += usrNum;
+            }
+            alert("Your list of numbers: " + usrStr);
+        }
+
+        //Question 7 - Verifying User Credentials: 
+        function usrCrd(){
+            var pass = "hackeru123";
+            var usrPass = prompt("Welcome to the system! Please Enter your password:")
+            usrPass == "hackeru123"? alert("Login Successful!"):alert("Login Failed!");
+        }
+
+        //Question 8 - Diplaying JS Variable Types: 
+        function varTypes(){
+            let var1 = "Hey!";
+            let var2 = 4;
+            let var3 = true;  
+            alert("See three variable values and types below:"  
+                + "\n\nVariable 1: \n" + "Value: " + var1 + " " + "Type: " + typeof(var1)
+                + "\n\nVariable 2: \n" + "Value: " + var2 + " " + "Type: " + typeof(var2) 
+                + "\n\nVariable 3: \n" + "Value: " + var3 + " " + "Type: " + typeof(var3)
+            )
+        }
+        //Question 9 - Age Verification Wizard:
+        function age(){
+            var age = Number(prompt("Enter your age: "));
+            if (age < 16){
+                alert("You're too young to enter!");
+            } else if (age >= 16 && age <= 18){
+                alert("You may enter only with parental approval!");
+            } else if (age > 18){
+                alert("You may enter!");
+            }
+        }
+        //Question 10 - Basic Calculator:
+        function calc(){
+            var num1 = Number(prompt("Enter the first number: "));
+            var num2 = Number(prompt("Enter the second number: "));
+            var operator = prompt("Enter an operator ('+' or '-') to generate an equation: ")            
+            if (operator == "+") {
+                var result = Number(num1 + num2);
+                alert("The result of your equation is " + result);
+            }
+            else if (operator == "-") {
+                var result = Number(num1 - num2);
+                alert("The result of your equation is " + result);
+            } else { 
+                alert("Sorry, but we only do addition and multiplication...");
+            }
+        }
+
+        //Bonus Question - Appending 5 objects to a list (array): 
+        function appNums() {
+            var usrStr = ["1st Object","2",true,"4","Final Object"];
+            for (i in usrStr){  
+                alert("The value of Array-Object No." + (Number(i) + 1) + " is: " +  usrStr[i]);     
+            }
+            alert("Your Array: " + usrStr)
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="background-color: aquamarine;">JS - Final Test - Evgeni Krein</h1>
+    
+    <hr>
+    <h2>Question 1 - Dividing Numbers into Groups by Size</h2>
+    <button onclick="numSize()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 2 - Adding 10 Numbers</h2>
+    <button onclick="addNum()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 3 - Greeting The User</h2>
+    <button onclick="usrGrt()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 4 - Total of All Numbers UpTo User Number</h2>
+    <button onclick="num100()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 5 - Retrieving Uneven Numbers</h2>
+    <button onclick="unEven()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 6 - Appending 5 Numbers to String</h2>
+    <button onclick="appNum()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 7 - Verifying User Credentials</h2>
+    <button onclick="usrCrd()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 8 - Diplaying JS Variable Types</h2>
+    <button onclick="varTypes()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 9 - Age Verification Wizard</h2>
+    <button onclick="age()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Question 10 - Basic Calculator</h2>
+    <button onclick="calc()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    <h2>Bonus Question - Appending 5 Objects to a List (Array)</h2>
+    <button onclick="appNums()" style="background-color: rgb(213, 243, 145); border-color: cyan;">Click me to run the script!</button>
+    <hr>
+    
+    
+    
+    <hr>
+</body>
+</html>
